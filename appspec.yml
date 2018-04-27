@@ -2,20 +2,20 @@ version: 0.0
 os: linux
 files:
     - source: /
-      destination: /apps/portfolio
+      destination: /portfolio
 hooks:
 #  ApplicationStop:
 #    - location: deployment.js
 #      timeout: 180
-  BeforeInstall:
-    - location: deployment.js
-      timeout: 180
+ BeforeInstall:
+#    - location: deployment.js
+#      timeout: 180
   AfterInstall:
-    - location: deployment.js
+    - location: scripts/run.sh
       timeout: 180
-  ApplicationStart:
-    - location: deployment.js
-      timeout: 180
-  ValidateService:
-    - location: deployment.js
-      timeout: 180
+#  ApplicationStart:
+#    - location: deployment.js
+#      timeout: 180
+#  ValidateService:
+#    - location: deployment.js
+#      timeout: 180
