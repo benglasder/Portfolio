@@ -8,14 +8,14 @@ hooks:
 #    - location: deployment.js
 #      timeout: 180
   BeforeInstall:
-    - location: deployment.js
+    - location: scripts/deployment.js
       timeout: 180
   AfterInstall:
-    - location: deployment.js
+    - location: scripts/deployment.js
       timeout: 180
   ApplicationStart:
-    - location: deployment.js
+    - location: scripts/deployment.js
       timeout: 180
   ValidateService:
-    - location: deployment.js
+    - location: scripts/deployment.js
       timeout: 180
