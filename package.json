@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/benglasder/portfolio/issues"
   },
-  "homepage": "https://github.com/benglasder/portfolio#readme"
+  "homepage": "https://github.com/benglasder/portfolio#readme",
+  "dependencies": {
+    "codedeploy-scripts": "^1.0.0"
+  }
 }
