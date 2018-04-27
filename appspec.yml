@@ -7,7 +7,7 @@ hooks:
 #  ApplicationStop:
 #    - location: deployment.js
 #      timeout: 180
- BeforeInstall:
+# BeforeInstall:
 #    - location: deployment.js
 #      timeout: 180
   AfterInstall:
