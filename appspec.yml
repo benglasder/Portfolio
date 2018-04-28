@@ -16,4 +16,4 @@ hooks:
 
    AfterInstall:
     - location: scripts/run.sh
-      runas: ec2-user
+      runas: root
