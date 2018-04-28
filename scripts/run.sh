@@ -1,5 +1,3 @@
 #!/bin/bash
 
-echo "starting portfolio"
-
-npm start
+echo "did this deploy?"

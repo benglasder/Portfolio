@@ -1,21 +1,32 @@
 version: 0.0
 os: linux
 files:
-    - source: /
-      destination: /portfolio
+- source: /
+ destination: /home/ec2-user/portfolio
+
+permissions:
+- object: /
+   pattern: "**"
+   owner: ec2-user
+   group: ec2-user
+
 hooks:
-#  ApplicationStop:
-#    - location: deployment.js
-#      timeout: 180
-# BeforeInstall:
-#    - location: deployment.js
-#      timeout: 180
-  AfterInstall:
-    - location: scripts/run.sh
-      timeout: 180
-#  ApplicationStart:
-#    - location: deployment.js
-#      timeout: 180
-#  ValidateService:
-#    - location: deployment.js
-#      timeout: 180
+#ApplicationStop:
+ #  - location: bin/app-stop
+ #    timeout: 10
+#     runas: ec2-user
+
+#AfterInstall:
+#   - location: bin/install-pkgs
+#     timeout: 1200
+#     runas: ec2-user
+
+ApplicationStart:
+   - location: scripts/run.sh
+     timeout: 60
+     runas: ec2-user
+
+#ValidateService:
+#   - location: bin/app-validate
+#     timeout: 10
+#     runas: ec2-user
