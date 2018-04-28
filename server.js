@@ -10,7 +10,7 @@ require('dotenv').config();
 var port = process.env.PORT || 80;
 
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
     console.log(`listening on ${port}`);
 });
 
