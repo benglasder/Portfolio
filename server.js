@@ -7,7 +7,7 @@ var path = require('path');
 require('dotenv').config();
 
 // Setup Port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 443;
 
 
 app.listen(port, () => {
