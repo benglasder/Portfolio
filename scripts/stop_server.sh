@@ -2,6 +2,15 @@
 
 echo "Killing all node processes"
 
-cd /home/ec2-user/portfolio
+isExistApp='pgrep node'
 
-killall node
+if[[ -n $isExistApp ]]; then
+    service node stop
+fi
+
+echo "$isExistApp"
+
+echo "Node process have been stopped"
+
+
+
