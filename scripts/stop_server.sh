@@ -4,7 +4,7 @@ echo "Killing all node processes"
 
 isExistApp='pgrep node'
 
-if[[ -n $isExistApp ]]; then
+if [[ -n $isExistApp ]]; then
     service node stop
 fi
 
