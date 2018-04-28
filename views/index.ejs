@@ -1,54 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>AWS CodeDeploy with Github</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-  </head>
+<% include partials/header %>
 
-  <body>
-
-   
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>My Portfolio Website</h1>
-        <p>Initial Commit to test Continuous Deployment</p>
-        <p><a class="btn btn-primary btn-lg" href="/learnMore" role="button">Learn more &raquo;</a></p>
-      </div>
+    <div class="container bg-1">
+        <div class="row">
+            <div class="jumbotron welcome">
+                <h1>Ben Glasder</h1>
+                <p>Welcome to my personal website. Feel free to take a look around!</p>
+                <p>This site's source code is hosted in my public GitHub repository. Click the button below to view it!</p>
+                <a class="btn btn-default" target="_blank" href="https://github.com/Saumby/PersonalSite/tree/master" role="button">GitHub Repository</a>
+                <a class="btn btn-info" href="/download" role="button">Resume PDF</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="welcome">
+                <div class="col-md-12 welcome">
+                    <h2>About Me</h2>
+                    <hr>
+                    <div class="col-xs-12 col-sm-8">
+                        <p>I am a recent college graduate who is passionate about technology. I currently work as a full stack
+                            software developer at Secura Insurance in Appleton, Wisconsin. We utilize the Microsoft .Net
+                            technology stack to build and maintain ASP.net MVC web applications, Web APIs, Windows Services,
+                            and classic Windows Forms applications.
+                        </p>
+                        <p>This site's main purpose is to showcase my skills as a full stack developer. Since I work full-time
+                            using .Net langauges (C# and occasionally VB.net), I will challenge myself to build this website
+                            using a completely different set of tools. This website will be built using the
+                            <fancy>m.e.r.n.</fancy> technology stack.
+                        </p>
+                        <p>In my freetime, I like to cook, listen to music, play guitar and piano, read about new technology,
+                            and of course program. In the winter, I shift my focus into getting out and skiing as much as
+                            possible. This past season, I was fortunate enough to take two separate trips out to Summit County,
+                            Colorado to ski Breck, Keystone and A-Basin. When I can't make it out west, I will still try
+                            to get out to the midwest hills as much as often to impove my skill and ability.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="/images/Headshot.jpg" class="img-rounded" height="200" width="140" alt="Headshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="welcome">
+                <div class="col-sm-12 welcome">
+                    <h2>Education</h2>
+                    <hr>
+                    <h3>University of Wisconsin Oshkosh | 2014 - 2017</h3>
+                    <h4>B.B.A. Information Systems - Emphasis in Web and Mobile Development</h4>
+                    <h5>Relevant Courses</h5>
+                    <ul>
+                        <li>Agile Web Development (c#, ASPX)</li>
+                        <li>Database Systems (mssql)</li>
+                        <li>Mobile Application Development(Java, Swift)</li>
+                        <li>Introduction to Usability (UX)</li>
+                        <li>Internet Marketing (Google Analytics, AdSense)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="welcome">
+                <div class="col-sm-12 welcome">
+                    <h2>Experience</h2>
+                        <hr>
+                        <h3>Software Developer - Secura Insurance | March 2017 - Current</h3>
+                        <h3>Technical Support Intern - Bemis Company | March 2016 - 2017</h3>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="welcome">
+                <div class="col-sm-12 welcome">
+                    <h2>Lorem Ipsum</h2>
+                        <hr>
+                    <p>Lorem ipsum dolor sit amet, ea omnium nostrum pro. Ne eum amet denique electram, sonet gloriatur et sea. Erat deseruisse no nam, et mei nulla oportere intellegat, has luptatum tincidunt id. Sit utroque erroribus ad, soleat mucius ne nam, ne usu suavitate dissentias referrentur. Stet comprehensam nec ea, et odio maiorum eum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="welcome">
+                    <div class="col-sm-12 welcome">
+                        <h2>Dolor</h2>
+                            <hr>
+                        <p>Lorem ipsum dolor sit amet, ea omnium nostrum pro. Ne eum amet denique electram, sonet gloriatur et sea. Erat deseruisse no nam, et mei nulla oportere intellegat, has luptatum tincidunt id. Sit utroque erroribus ad, soleat mucius ne nam, ne usu suavitate dissentias referrentur. Stet comprehensam nec ea, et odio maiorum eum.</p>
+                    </div>
+                </div>
+            </div>
+        <p></p>
     </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Does this work with Node.js?</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>created deployment script in root dir...</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Got it to work but need to add proxy.</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-  </body>
-</html>
+    <div class="footer">
+        <p></p>
+    </div>
+    <% include partials/footer %>
