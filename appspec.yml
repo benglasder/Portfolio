@@ -10,6 +10,9 @@ permissions:
      group: ec2-user
 
 hooks:
+   BeforeInstall:
+    - location: scripts/install_node_modules.sh
+      runas: ec2-user
 
    AfterInstall:
     - location: scripts/run.sh
