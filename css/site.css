@@ -1,0 +1,23 @@
+body {
+    background-image: url('/images/Keystone.jpg');
+  }
+  .bg-1 {
+    margin-top: 50px;
+  }
+  .welcome {
+    background: rgb(0, 0, 0);
+    /* This is for ie8 and below */
+    background: rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    color: white;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    text-align: center;
+}
