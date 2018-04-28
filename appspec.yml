@@ -12,7 +12,7 @@ permissions:
 hooks:
    BeforeInstall:
     - location: scripts/install_node_modules.sh
-      runas: ec2-user
+      runas: root
 
    AfterInstall:
     - location: scripts/run.sh
