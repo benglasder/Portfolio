@@ -10,7 +10,7 @@ fi
 
 echo "$isExistApp"
 
-echo "Node process have been stopped"
+echo "Node processes have been stopped"
 
 
 
