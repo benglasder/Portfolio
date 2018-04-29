@@ -34,6 +34,7 @@
     "dotenv": "^5.0.0",
     "ejs": "^2.5.7",
     "express": "^4.16.3",
+<<<<<<< HEAD
     "materialize-css": "^1.0.0-beta",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
@@ -46,6 +47,9 @@
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
     "toastr": "2.1.2"
+=======
+    "serve-favicon": "^2.5.0"
+>>>>>>> feature/groundUp
   },
   "devDependencies": {
     "nodemon": "^1.15.1",
