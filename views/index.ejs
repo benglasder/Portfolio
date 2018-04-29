@@ -1,93 +1,68 @@
 <% include partials/header %>
 
-    <div class="container bg-1">
-        <div class="row">
-            <div class="jumbotron welcome">
-                <h1>Ben Glasder</h1>
-                <p>Welcome to my personal website. Feel free to take a look around!</p>
-                <p>This site's source code is hosted in my public GitHub repository. Click the button below to view it!</p>
-                <a class="btn btn-default" target="_blank" href="https://github.com/Saumby/PersonalSite/tree/master" role="button">GitHub Repository</a>
-                <a class="btn btn-info" href="/download" role="button">Resume PDF</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="welcome">
-                <div class="col-md-12 welcome">
-                    <h2>About Me</h2>
-                    <hr>
-                    <div class="col-xs-12 col-sm-8">
-                        <p>I am a recent college graduate who is passionate about technology. I currently work as a full stack
-                            software developer at Secura Insurance in Appleton, Wisconsin. We utilize the Microsoft .Net
-                            technology stack to build and maintain ASP.net MVC web applications, Web APIs, Windows Services,
-                            and classic Windows Forms applications.
-                        </p>
-                        <p>This site's main purpose is to showcase my skills as a full stack developer. Since I work full-time
-                            using .Net langauges (C# and occasionally VB.net), I will challenge myself to build this website
-                            using a completely different set of tools. This website will be built using the
-                            <fancy>m.e.r.n.</fancy> technology stack.
-                        </p>
-                        <p>In my freetime, I like to cook, listen to music, play guitar and piano, read about new technology,
-                            and of course program. In the winter, I shift my focus into getting out and skiing as much as
-                            possible. This past season, I was fortunate enough to take two separate trips out to Summit County,
-                            Colorado to ski Breck, Keystone and A-Basin. When I can't make it out west, I will still try
-                            to get out to the midwest hills as much as often to impove my skill and ability.
-                        </p>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="/images/Headshot.jpg" class="img-rounded" height="200" width="140" alt="Headshot">
+<div class="container">
+    <!-- START ARTICLE FEED -->
+    <section class="articles">
+        <div class="column is-8 is-offset-2">
+            <!-- START PROMO BLOCK -->
+            <section class="hero is-info is-bold is-small promo-block">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Ben's Blog
+                        </h1>
+                        <h2 class="subtitle">
+                            A blog documenting my progress in learning new technologies.
+                        </h2>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="welcome">
-                <div class="col-sm-12 welcome">
-                    <h2>Education</h2>
-                    <hr>
-                    <h3>University of Wisconsin Oshkosh | 2014 - 2017</h3>
-                    <h4>B.B.A. Information Systems - Emphasis in Web and Mobile Development</h4>
-                    <h5>Relevant Courses</h5>
-                    <ul>
-                        <li>Agile Web Development (c#, ASPX)</li>
-                        <li>Database Systems (mssql)</li>
-                        <li>Mobile Application Development(Java, Swift)</li>
-                        <li>Introduction to Usability (UX)</li>
-                        <li>Internet Marketing (Google Analytics, AdSense)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="welcome">
-                <div class="col-sm-12 welcome">
-                    <h2>Experience</h2>
-                        <hr>
-                        <h3>Software Developer - Secura Insurance | March 2017 - Current</h3>
-                        <h3>Technical Support Intern - Bemis Company | March 2016 - 2017</h3>
-                </div>
-            </div>
-        </div>
-         <div class="row">
-            <div class="welcome">
-                <div class="col-sm-12 welcome">
-                    <h2>I think i successfully removed PM2... Will add back if i think i need it</h2>
-                        <hr>
-                    <p>Lorem ipsum dolor sit amet, ea omnium nostrum pro. Ne eum amet denique electram, sonet gloriatur et sea. Erat deseruisse no nam, et mei nulla oportere intellegat, has luptatum tincidunt id. Sit utroque erroribus ad, soleat mucius ne nam, ne usu suavitate dissentias referrentur. Stet comprehensam nec ea, et odio maiorum eum.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-                <div class="welcome">
-                    <div class="col-sm-12 welcome">
-                        <h2>Now i need to straigten out start, stop, test scripts</h2>
-                            <hr>
-                        <p>Lorem ipsum dolor sit amet, ea omnium nostrum pro. Ne eum amet d, soleat mucius ne nam, ne usu suavitate dissetias referrentur. Stet comprehensam nec ea, et odio maiorum eum.</p>
+            </section>
+            <!-- END PROMO BLOCK -->
+            <!-- START ARTICLE -->
+            <div class="card article">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-center">
+                            <img src="./images/headshotNew.jpg" class="author-image" alt="Placeholder image">
+                        </div>
+                        <div class="media-content has-text-centered">
+                            <p class="title article-title">Just Getting Started</p>
+                            <p class="subtitle is-6 article-subtitle">
+                                <a href="https://www.linkedin.com/in/benglasder/">@benglasder</a> on April 29, 2018
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content article-body">
+                        <p>In the past couple months, I have been trying really hard to pick up on some newer web development technologies. </p>
+                        <p>Notably, I've been able to leverage resources like Pluralsight and Youtube to learn how to write apps outside of the Microsoft .Net stack.</p>
+                        <p>In the beginning, it was pretty difficult to find the motivation to get back on the laptop and code after a day of coding at my current job. Not only difficult, but sometimes even <fancy>frustrating.</fancy></p>
+                        <p>You see, at my current job, we seldom run into issues when upgrading packages using Nuget or upgrade our projects to the latest .Net framework. You really get what you pay for when you develop on a commercially licensed platform!</p>
+                        <p>That's not the case when you go open source. One of the main challenges I have right now is attempting to follow a tutorial that uses a specific version of a framework or package, only to get half way and find that there are bugs that I just can't seem to figure out.</p>
+                        <p>On the off-chance I get lucky, it's usually after diving into 2-3 pages of Stack Exchange search results. What would take me an hour or two in say an ASP.net MVC app, would take me the better part of a day just to figure out in Node.js!</p>
+
+                        <h3 class="has-text-centered">But I'm catching on.</h3>
+
+                        <p>With the free time I've had after work and a couple weekends dedicated to coding, I've been able to:</p>
+                        <ul>
+                            <li>Build this website using Node.js, Express, and Bulma CSS</li>
+                            <li>Host this website to the public using AWS</li>
+                            <li>Deploy it using a combination of Github, CodeDeploy, and some scripting 'magic'</li>
+                            <li>Take tutorial courses on AWS, React, and noSQL </li>
+                        </ul>
+
+                        <p>That being said, I still have more planned for this site. Hopefully in this order, I would like to add:</p>
+                        <ol>
+                            <li>Database-backed blog posts using DynamoDB, So I don't need to store these blog posts in source code!</li>
+                            <li>Add session management and authentication so only I (or a select few) can create blog posts</li>
+                            <li>Register a memorable domain name for this site.</li>
+                            <li>Redo the front end to use a modern framework, such as Angular, React, or Vue</li>
+                        </ol>
+                        <p>Stay Tuned, there is plenty more to come!</p>
                     </div>
                 </div>
             </div>
-        <p></p>
-    </div>
-    <div class="footer">
-        <p></p>
-    </div>
+            <!-- END ARTICLE -->
+    </section>
+    <!-- END ARTICLE FEED -->
+</div>
     <% include partials/footer %>
