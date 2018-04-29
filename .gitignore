@@ -87,4 +87,9 @@ Temporary Items
 # Node Modules
 node_modules/
 
+<<<<<<< HEAD
 dist/
+=======
+# .idea
+.idea/
+>>>>>>> feature/groundUp
