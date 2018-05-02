@@ -5,6 +5,19 @@ const bodyParser = require('body-parser');
 const app = express();
 var path = require('path');
 var favicon = require('serve-favicon');
+
+// Authentication
+const cookieParser = require('cookie-parser');
+const expressValidator = require('express-validator');
+const flash = require('connect-flash');
+const session = require('express-session');
+const passport = require('passport-local').Strategy;
+const mongo = require('mongodb');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/loginapp');
+var db = mongoose.connection;
+
+
 require('dotenv').config();
 
 // Setup Port
