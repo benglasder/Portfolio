@@ -11,7 +11,7 @@ router.get('/aboutMe', (req, res) => {
     res.render('aboutMe.ejs');
 })
 
-router.get('/addPost', (req, res) => {
+router.get('/addPost', ensureAuthenticated, (req, res) => {
     res.render('addPost.ejs');
 })
 
