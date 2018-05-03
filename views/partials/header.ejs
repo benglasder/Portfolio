@@ -25,18 +25,13 @@
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active" href="/">
-                            Home
-                        </a>
-                        <a class="navbar-item" href="/aboutMe">
-                            About Me
-                        </a>
-                        <a class="navbar-item" href="/download">
-                            Resume
-                        </a>
-                        <a class="navbar-item" href="/addPost">
-                            Create Post
-                        </a>
+                        <a class="navbar-item is-active" href="/">Home</a>
+                        <a class="navbar-item" href="/aboutMe">About Me</a>
+                        <a class="navbar-item" href="/download">Resume</a>
+                        <%if (user) { %>
+                            <a class="navbar-item" href="/addPost">Create Post</a>
+                            <a class="navbar-item" href="/users/logout">Logout</a>
+                        <% } %>
                     </div>
                 </div>
             </div>
