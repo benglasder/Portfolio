@@ -3,12 +3,16 @@ var router = express.Router();
 
 
 // Get Homepage
-router.get('/', ensureAuthenticated, (req, res) => {
+router.get('/', (req, res) => {
    res.render('index.ejs');
 });
 
 router.get('/aboutMe', (req, res) => {
     res.render('aboutMe.ejs');
+})
+
+router.get('/addPost', (req, res) => {
+    res.render('addPost.ejs');
 })
 
 function ensureAuthenticated(req, res, next){
