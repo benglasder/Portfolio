@@ -13,12 +13,7 @@
     </head>
     <body>
         <!-- START NAV -->
-        <%if (user) { %>
-        <nav class="navbar is-green">
-        <% } else { %>
-            <nav class="navbar">
-        <% }%>
-
+        <nav class="navbar <%if (user) { %> is-green <% } else { %> <% }%>">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
