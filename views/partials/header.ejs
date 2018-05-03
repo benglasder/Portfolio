@@ -45,6 +45,24 @@
             </div>
         </nav>
         <!-- END NAV -->
+
+        <!-- Alerts -->
+        <%if (success_msg != "") { %>
+            <div class="notification is-success">
+                <%=success_msg%>
+            </div>
+        <% } %>
+        <%if (error_msg != "") { %>
+            <div class="notification is-danger">
+                <%=error_msg%>
+            </div>
+        <% } %>
+        <%if (error != "") { %>
+        <div class="notification is-warning">
+            <%=error%>
+        </div>
+        <% } %>
+
         <script type="text/javascript" src="/js/bulma.js"></script>
     </body>
 </html>
