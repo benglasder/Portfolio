@@ -35,6 +35,7 @@ router.post('/register', function (req, res) {
 
     var errors = req.validationErrors();
 
+    console.log(`Client Input: ${registrationKey} | Server Value: ${process.env.REGISTRATION_KEY}`);
     if (errors) {
         res.render('register', {
             errors: errors
@@ -62,6 +63,7 @@ router.post('/register', function (req, res) {
                         password: password
                     });
                     if (registrationKey === process.env.REGISTRATION_KEY){
+
                         console.log('Register Success');
                         User.createUser(newUser, function (err, user) {
                             if (err) throw err;
