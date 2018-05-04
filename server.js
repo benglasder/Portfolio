@@ -17,15 +17,17 @@ const mongo = require('mongodb');
 const mongoose = require('mongoose');
 const winston = require('winston');
 
+require('dotenv').config();
+
 const logger = new (winston.Logger)({
     transports: [
         new (winston.transports.Console)({ json: false, timestamp: true }),
-        new winston.transports.File({ filename: `${path.join(__dirname, 'debug.log')}`, json: false })
+        new winston.transports.File({ filename: process.env.LOG_LOCATION, json: false })
     ],
     exitOnError: false
 });
 
-require('dotenv').config();
+
 
 
 mongoose.connect(process.env.MONGO_DB_CONNECTION);

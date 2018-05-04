@@ -1,4 +1,4 @@
-#!/bin/bash
+nod#!/bin/bash
 
 cd /home/ec2-user/portfolio
 
