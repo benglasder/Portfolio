@@ -15,9 +15,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongo = require('mongodb');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 
-mongoose.connect('mongodb://localhost/loginapp');
+mongoose.connect(process.env.MONGO_DB_CONNECTION);
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
@@ -30,7 +31,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Body Parser Middlewear
+// Body Parser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
