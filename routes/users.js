@@ -78,9 +78,6 @@ router.post('/register', function (req, res) {
                         logger.info(`Client: ${registrationKey}`);
                         logger.info(`Server: ${process.env.REGISTRATION_KEY}`);
                         req.flash('error_msg', 'Invalid Registration Key');
-                        res.render('register', {
-                            errors: errors
-                        });
                     }
                 }
             });
