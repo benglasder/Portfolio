@@ -1,7 +1,8 @@
 console.log('May node be with you');
 
 const express = require('express'),
-    morgan = require('morgan');
+    morgan = require('morgan'),
+    logger = require('./server/logger');
 const bodyParser = require('body-parser');
 
 var path = require('path');
@@ -20,13 +21,7 @@ const winston = require('winston');
 
 require('dotenv').config();
 
-const logger = new (winston.Logger)({
-    transports: [
-        new (winston.transports.Console)({ json: false, timestamp: true }),
-        new winston.transports.File({ filename: process.env.LOG_LOCATION, json: false })
-    ],
-    exitOnError: false
-});
+
 
 
 
@@ -35,7 +30,7 @@ mongoose.connect(process.env.MONGO_DB_CONNECTION);
 var db = mongoose.connection;
 
 db.on("open", function() {
-    logger.info("Connected to mongo server.");
+    logger.info("Connection to MongoDB successful");
 });
 
 db.on("error", function(err) {
