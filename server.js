@@ -15,11 +15,30 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongo = require('mongodb');
 const mongoose = require('mongoose');
+const winston = require('winston');
+
+const logger = new (winston.Logger)({
+    transports: [
+        new (winston.transports.Console)({ json: false, timestamp: true }),
+        new winston.transports.File({ filename: __dirname + '/debug.log', json: false })
+    ],
+    exitOnError: false
+});
+
 require('dotenv').config();
 
 
 mongoose.connect(process.env.MONGO_DB_CONNECTION);
 var db = mongoose.connection;
+
+db.on("open", function() {
+    logger.info("Connected to mongo server.");
+});
+
+db.on("error", function(err) {
+    logger.info(err);
+    return console.log(err);
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
