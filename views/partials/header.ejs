@@ -13,10 +13,16 @@
     </head>
     <body>
         <!-- START NAV -->
-        <nav class="navbar">
+        <nav class="navbar <%if (user) { %> is-green <% } else { %> <% }%>">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">Ben Glasder</a>
+                    <a class="navbar-item" href="/">
+                        <%if (user) { %>
+                            LOGGED IN
+                        <% } else { %>
+                            Ben Glasder
+                        <% }%>
+                    </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
             <span></span>
             <span></span>
@@ -25,20 +31,38 @@
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active" href="/">
-                            Home
-                        </a>
-                        <a class="navbar-item" href="/aboutMe">
-                            About Me
-                        </a>
-                        <a class="navbar-item" href="/download">
-                            Resume
-                        </a>
+                        <a class="navbar-item is-active" href="/">Home</a>
+                        <a class="navbar-item" href="/aboutMe">About Me</a>
+                        <a class="navbar-item" href="/download">Resume</a>
+                        <%if (user) { %>
+                            <a class="navbar-item" href="/addPost">Create Post</a>
+                            <a class="navbar-item" href="/users/logout">Logout</a>
+                        <% } else { %>
+                        <a href="/users/login" class="navbar-item">Admin Login</a>
+                        <% } %>
                     </div>
                 </div>
             </div>
         </nav>
         <!-- END NAV -->
-        <script type="application/javascript" src="/css/bulma.js"></script>
+
+        <!-- Alerts -->
+        <%if (success_msg != "") { %>
+            <div class="notification is-success">
+                <%=success_msg%>
+            </div>
+        <% } %>
+        <%if (error_msg != "") { %>
+            <div class="notification is-danger">
+                <%=error_msg%>
+            </div>
+        <% } %>
+        <%if (error != "") { %>
+        <div class="notification is-danger">
+            <%=error%>
+        </div>
+        <% } %>
+
+        <script type="text/javascript" src="/js/bulma.js"></script>
     </body>
 </html>
