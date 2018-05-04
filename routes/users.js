@@ -40,6 +40,7 @@ router.post('/register', function (req, res) {
     var errors = req.validationErrors();
 
     if (errors) {
+        logger.info(errors);
         res.render('register', {
             errors: errors
         });
