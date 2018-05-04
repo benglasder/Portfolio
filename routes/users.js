@@ -5,6 +5,10 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
 
+
+//todo restructure project
+logger = require('../server/logger');
+
 // Register
 router.get('/register', function (req, res) {
     res.render('register');
@@ -35,7 +39,6 @@ router.post('/register', function (req, res) {
 
     var errors = req.validationErrors();
 
-    console.log(`Client Input: ${registrationKey} | Server Value: ${process.env.REGISTRATION_KEY}`);
     if (errors) {
         res.render('register', {
             errors: errors
@@ -63,16 +66,14 @@ router.post('/register', function (req, res) {
                         password: password
                     });
                     if (registrationKey === process.env.REGISTRATION_KEY){
-
-                        console.log('Register Success');
                         User.createUser(newUser, function (err, user) {
                             if (err) throw err;
-                            console.log(user);
+                            logger.info(`New User Created: ${user}`);
                         });
                         req.flash('success_msg', 'You are registered and can now login');
                         res.redirect('/users/login');
                     } else {
-                        console.log('Registration Key not Valid');
+                        logger.info('Registration Key not Valid');
                         req.flash('error_msg', 'Invalid Registration Key');
                         res.render('register', {
                             errors: errors
