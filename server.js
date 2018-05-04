@@ -29,8 +29,16 @@ require('dotenv').config();
 
 
 mongoose.connect(process.env.MONGO_DB_CONNECTION);
-logger.info('Hey');
 var db = mongoose.connection;
+
+db.on("open", function() {
+    logger.info("Connected to mongo server.");
+});
+
+db.on("error", function(err) {
+    logger.info(err);
+    return console.log(err);
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
