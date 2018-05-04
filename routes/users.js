@@ -74,7 +74,9 @@ router.post('/register', function (req, res) {
                         req.flash('success_msg', 'You are registered and can now login');
                         res.redirect('/users/login');
                     } else {
-                        logger.info(`Registration Key not Valid. |${registrationKey}|${process.env.REGISTRATION_KEY}|`);
+                        logger.info(`Registration Key not Valid`);
+                        logger.info(`Client: ${registrationKey}`);
+                        logger.info(`Server: ${process.env.REGISTRATION_KEY}`);
                         req.flash('error_msg', 'Invalid Registration Key');
                         res.render('register', {
                             errors: errors
