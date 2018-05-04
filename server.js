@@ -1,6 +1,8 @@
 console.log('May node be with you');
 
-const express = require('express');
+const express = require('express'),
+    morgan = require('morgan'),
+    logger = require('./server/logger');
 const bodyParser = require('body-parser');
 
 var path = require('path');
@@ -17,22 +19,18 @@ const mongo = require('mongodb');
 const mongoose = require('mongoose');
 const winston = require('winston');
 
-const logger = new (winston.Logger)({
-    transports: [
-        new (winston.transports.Console)({ json: false, timestamp: true }),
-        new winston.transports.File({ filename: __dirname + '/debug.log', json: false })
-    ],
-    exitOnError: false
-});
-
 require('dotenv').config();
+
+
+
+
 
 
 mongoose.connect(process.env.MONGO_DB_CONNECTION);
 var db = mongoose.connection;
 
 db.on("open", function() {
-    logger.info("Connected to mongo server.");
+    logger.info("Connection to MongoDB successful");
 });
 
 db.on("error", function(err) {
@@ -44,6 +42,18 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 const app = express();
+
+app.use(morgan('dev', {
+    skip: function (req, res) {
+        return res.statusCode < 400
+    }, stream: process.stderr
+}));
+
+app.use(morgan('dev', {
+    skip: function (req, res) {
+        return res.statusCode >= 400
+    }, stream: process.stdout
+}));
 
 
 // View Engine
