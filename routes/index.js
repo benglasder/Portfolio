@@ -13,19 +13,8 @@ router.get('/', (req, res) => {
 
 router.get('/aboutMe', (req, res) => {
     res.render('aboutMe.ejs');
-})
+});
 
-router.get('/addPost', ensureAuthenticated, (req, res) => {
-    res.render('addPost.ejs');
-})
-
-function ensureAuthenticated(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    } else {
-        res.redirect('/users/login');
-    }
-}
 
 
 module.exports = router;

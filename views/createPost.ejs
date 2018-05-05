@@ -1,6 +1,6 @@
 <%include partials/header.ejs%>
 <section class="section">
-    <form method="post" action="/blog/addPost">
+    <form method="post" action="/blog/createPost">
         <div class="field">
             <div class="control">
                 <label class="label">Title</label>
@@ -10,7 +10,7 @@
         <div class="field">
             <div class="control">
                 <label class="label">Content</label>
-                <textarea name="Content" class="textarea"></textarea>
+                <textarea name="content" class="textarea"></textarea>
             </div>
         </div>
         <div class="field">
