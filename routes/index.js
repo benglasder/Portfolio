@@ -7,7 +7,6 @@ logger = require('../server/logger');
 
 // Get Homepage
 router.get('/', (req, res) => {
-    logger.info('test from home page');
    res.render('index.ejs');
 });
 
