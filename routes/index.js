@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
    res.render('index.ejs');
 });
 
-router.get('/aboutMe', (req, res) => {
-    res.render('aboutMe.ejs');
+router.get('/blog', (req, res) => {
+    res.render('blog.ejs');
 })
 
 router.get('/addPost', ensureAuthenticated, (req, res) => {
