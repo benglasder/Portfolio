@@ -1,20 +1,34 @@
 <% include partials/header %>
-
-<div class="container">
-    <!-- START PROMO BLOCK -->
-    <section class="hero is-info is-bold is-small promo-block">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Ben's Blog
-                </h1>
-                <h2 class="subtitle">
-                    A blog documenting my progress in learning new technologies.
+<div class="hero-body">
+    <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+            <div class="column is-5">
+                <figure class="image">
+                    <img src="./images/Headshot.jpg" alt="Description">
+                </figure>
+            </div>
+            <div class="column is-6 is-offset-1">
+                <h1 class="title is-2"> Ambitious. Tenacious. Confident.</h1>
+                <h2 class="subtitle is-4">
+                    A recent college grad who is passionate about technology.
                 </h2>
+                <br>
+                <p class="has-text-centered">
+                    <a class="button is-medium is-link" href="https://www.linkedin.com/in/benglasder/">
+                        <span class="icon is-medium">
+                            <i class="fab fa-linkedin"></i>
+                        </span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="button is-medium is-info" href="https://github.com/benglasder/Portfolio">
+                        <span class="icon is-medium">
+                            <i class="fab fa-github"></i>
+                        </span>
+                       <span>Github</span>
+                    </a>
+                </p>
             </div>
         </div>
-    </section>
-    <!-- END PROMO BLOCK -->
- <% include partials/blog/blogPost %>
+    </div>
 </div>
-    <% include partials/footer %>
+<% include partials/footer %>
