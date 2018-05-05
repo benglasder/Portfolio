@@ -32,14 +32,23 @@
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
                         <a class="navbar-item is-active" href="/">Home</a>
-                        <a class="navbar-item" href="/aboutMe">About Me</a>
+                        <a class="navbar-item" href="/blog">Blog</a>
                         <a class="navbar-item" href="/download">Resume</a>
-                        <%if (user) { %>
-                            <a class="navbar-item" href="/addPost">Create Post</a>
-                            <a class="navbar-item" href="/users/logout">Logout</a>
-                        <% } else { %>
-                        <a href="/users/login" class="navbar-item">Admin Login</a>
-                        <% } %>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <span class="icon is-large">
+                            <i class="fas fa-sort-down"></i>
+                            </span>
+                            <div class="navbar-dropdown is-boxed">
+                                <%if (user) { %>
+                                    <a class="navbar-item" href="/addPost">Create Post</a>
+                                    <hr class="navbar-divider">
+                                    <a class="navbar-item" href="/users/logout">Logout</a>
+                                <% } else { %>
+                                    <a href="/users/login" class="navbar-item">Admin Login</a>
+                                <% } %>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
