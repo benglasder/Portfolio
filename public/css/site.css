@@ -62,3 +62,20 @@ div.column.is-8:first-child {
 .promo-block .container {
   margin: 1rem 5rem;
 }
+html.background-image{
+  height: 100%;
+  background-color: #2f2929;
+}
+body.background-image {
+  background-image: url('../images/DevilsLake.jpg');
+  background-size: cover;
+  height: 100%;
+}
+div.smoke {
+  background: rgb(0, 0, 0);
+  /* This is for ie8 and below */
+  background: rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  color: white;
+}
+
