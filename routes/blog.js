@@ -15,7 +15,6 @@ router.post('/createPost', ensureAuthenticated, function (req, res) {
     var content = req.body.content;
     var date = new Date();
     var author = req.user.name;
-    var isHtml = req.body.isHtml;
 
 
     // Validation
@@ -35,8 +34,7 @@ router.post('/createPost', ensureAuthenticated, function (req, res) {
             title: title,
             content: content,
             date: date,
-            author: author,
-            isHtml: isHtml
+            author: author
         });
 
         BlogPost.createBlogPost(newBlogPost, function (err, blogPost) {
