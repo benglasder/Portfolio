@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" integrity="sha256-2k1KVsNPRXxZOsXQ8aqcZ9GOOwmJTMoOB5o5Qp1d6/s=" crossorigin="anonymous" />
         <link rel="stylesheet" type="text/css" href="/css/site.css">
     </head>
-    <body>
+    <body class="has-navbar-fixed-top" id="body">
         <!-- START NAV -->
-        <nav class="navbar <%if (user) { %> is-green <% } else { %> <% }%>">
+        <nav class="navbar is-fixed-top <%if (user) { %> is-green <% } else { %> <% }%>">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
@@ -31,15 +31,24 @@
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active" href="/">Home</a>
-                        <a class="navbar-item" href="/aboutMe">About Me</a>
-                        <a class="navbar-item" href="/download">Resume</a>
-                        <%if (user) { %>
-                            <a class="navbar-item" href="/addPost">Create Post</a>
-                            <a class="navbar-item" href="/users/logout">Logout</a>
-                        <% } else { %>
-                        <a href="/users/login" class="navbar-item">Admin Login</a>
-                        <% } %>
+                        <a href="/" class="navbar-item">Home</a>
+                        <a href="/blog" class="navbar-item">Blog</a>
+                        <a href="/aboutMe" class="navbar-item">About Me</a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <span class="icon is-large">
+                            <i class="fas fa-sort-down"></i>
+                            </span>
+                            <div class="navbar-dropdown is-boxed">
+                                <%if (user) { %>
+                                    <a class="navbar-item" href="/addPost">Create Post</a>
+                                    <hr class="navbar-divider">
+                                    <a class="navbar-item" href="/users/logout">Logout</a>
+                                <% } else { %>
+                                    <a href="/users/login" class="navbar-item">Admin Login</a>
+                                <% } %>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
