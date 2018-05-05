@@ -10,6 +10,12 @@ var BlogPostSchema = mongoose.Schema({
     content: {
         type: String,
     },
+    date: {
+        type: Date,
+    },
+    author: {
+        type: String,
+    },
     isHtml: {
         type: Boolean
     }
