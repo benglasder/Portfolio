@@ -15,6 +15,10 @@ router.get('/blog', (req, res) => {
     res.render('blog.ejs');
 })
 
+router.get('/aboutMe', (req, res) => {
+    res.render('aboutMe.ejs');
+})
+
 router.get('/addPost', ensureAuthenticated, (req, res) => {
     res.render('addPost.ejs');
 })
