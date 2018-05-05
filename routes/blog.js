@@ -5,7 +5,18 @@ var BlogPost = require('../models/blogPost');
 
 logger = require('../server/logger');
 
+// Get All Posts
+router.get('/', (req, res) => {
+    let blogPosts = BlogPost.find({}, function(err, result) {
+        console.log(result.length);
+        res.render('blogPostListView', { blogPosts: result});
+    });
 
+})
+
+
+
+// Create Post
 router.get('/createPost', ensureAuthenticated, function (req, res) {
     res.render('createPost');
 });

@@ -7,14 +7,12 @@ logger = require('../server/logger');
 
 // Get Homepage
 router.get('/', (req, res) => {
+    logger.info(`Home`);
    res.render('index.ejs');
 });
 
-router.get('/blog', (req, res) => {
-    res.render('blog.ejs');
-})
-
 router.get('/aboutMe', (req, res) => {
+    logger.info('About me');
     res.render('aboutMe.ejs');
 });
 
