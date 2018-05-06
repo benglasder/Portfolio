@@ -41,6 +41,7 @@ router.post('/register', function (req, res) {
 
     if (errors) {
         logger.info(errors);
+        req.flash("errors", errors);
         res.render('register', {
             errors: errors
         });
@@ -68,7 +69,10 @@ router.post('/register', function (req, res) {
                     });
                     if (registrationKey === process.env.REGISTRATION_KEY){
                         User.createUser(newUser, function (err, user) {
-                            if (err) throw err;
+                            if (err){
+                                throw err;
+                                logger.error(err);
+                            }
                             logger.info(`New User Created: ${user}`);
                         });
                         req.flash('success_msg', 'You are registered and can now login');
@@ -78,6 +82,7 @@ router.post('/register', function (req, res) {
                         logger.info(`Client: ${registrationKey}`);
                         logger.info(`Server: ${process.env.REGISTRATION_KEY}`);
                         req.flash('error_msg', 'Invalid Registration Key');
+                        res.redirect('/users/register');
                     }
                 }
             });
