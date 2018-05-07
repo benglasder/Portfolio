@@ -3,7 +3,7 @@
 <div class="container">
     <!-- START ARTICLE FEED -->
     <section class="articles">
-        <div class="column is-8 is-offset-2">
+        <div id="blogPostDiv" class="column is-8 is-offset-2">
             <!-- START PROMO BLOCK -->
             <section class="hero is-info is-bold is-small promo-block">
                 <div class="hero-body">
@@ -18,6 +18,7 @@
                 </div>
             </section>
             <!-- END PROMO BLOCK -->
+
             <!-- START ARTICLE -->
             <div class="card article">
                 <div class="card-content">
@@ -62,6 +63,29 @@
                 </div>
             </div>
             <!-- END ARTICLE -->
+
+
+            <%for(let i=0; i<blogPosts.length; i++) { %>
+            <!-- START ARTICLE -->
+            <div class="card article">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-center">
+                            <img src="./images/headshotNew.jpg" class="author-image" alt="Placeholder image">
+                        </div>
+                        <div class="media-content has-text-centered">
+                            <p class="title article-title"><%= blogPosts[i].title%> </p>
+                                <a href="https://www.linkedin.com/in/benglasder/"><%=blogPosts[i].author%></a> on <%=blogPosts[i].date%>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content article-body">
+                        <%=blogPosts[i].content%>
+                    </div>
+                </div>
+            </div>
+            <!-- END ARTICLE -->
+            <% } %>
     </section>
     <!-- END ARTICLE FEED -->
 </div>
