@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
 
 })
 
-// bump
 
 // Create Post
 router.get('/createPost', ensureAuthenticated, function (req, res) {
