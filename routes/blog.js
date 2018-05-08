@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
 })
 
 
-
 // Create Post
 router.get('/createPost', ensureAuthenticated, function (req, res) {
     res.render('createPost');
