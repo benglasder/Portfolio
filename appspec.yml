@@ -16,7 +16,6 @@ hooks:
 
    AfterInstall:
     - location: scripts/after_install.sh
-      timeout: 5
       runas: ec2-user
 
    ApplicationStart:
