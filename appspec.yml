@@ -11,11 +11,11 @@ permissions:
 
 hooks:
    BeforeInstall:
-    - location: scripts/install_node_modules.sh
+    - location: scripts/before_install.sh
       runas: root
 
    AfterInstall:
-    - location: scripts/set_environment.sh
+    - location: scripts/after_install.sh
       timeout: 5
       runas: ec2-user
 
