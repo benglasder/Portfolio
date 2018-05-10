@@ -10,11 +10,15 @@ var ToDoItemSchema = mongoose.Schema({
     category: {
         type: String,
     },
+    status: {
+      type: String,
+    },
     priority: {
         type: Number,
     },
     dateEntered: {
         type: Date,
+        nullable: true
     },
     dateCompleted: {
         type: Date,
