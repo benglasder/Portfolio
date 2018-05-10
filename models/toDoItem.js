@@ -39,3 +39,11 @@ module.exports.getAllToDoItems = function(req, res, callback){
             return callback(result);
         });
 }
+
+module.exports.updateToDoItemById = function(toDoItem, callback){
+    try {
+        ToDoItem.updateOne(toDoItem.Name, toDoItem, callback);
+    } catch (err) {
+        logger.Info(err);
+    }
+}
