@@ -9,7 +9,7 @@ logger = require('../server/logger');
 router.get('/', (req, res) => {
    let toDoItems = ToDoItem.find({}, function(err, result) {
        console.log(result.length);
-       res.render('aboutThisSite', { toDoItems: result });
+       res.render('aboutSite.ejs', { toDoItems: result });
    });
 });
 
@@ -33,7 +33,7 @@ router.post('createToDoItem', ensureAuthenticated, function (req, res) {
     if (errors) {
         logger.info(errors);
         let toDoItems = ToDoItem.find({}, function(err, result) {
-            res.render('aboutThisSite', {
+            res.render('aboutSite.ejs', {
                 toDoItems: result,
                 errors: errors
             });
@@ -54,7 +54,7 @@ router.post('createToDoItem', ensureAuthenticated, function (req, res) {
 
             req.flash('success_msg', `${toDoItem.name} | Priority: ${toDoItem.priority}`);
             let toDoItems = ToDoItem.find({}, function(err, result) {
-                res.render('aboutThisSite', {
+                res.render('aboutSite.ejs', {
                     toDoItems: result
                 });
             });
