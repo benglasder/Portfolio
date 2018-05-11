@@ -14,14 +14,14 @@ var ToDoItemSchema = mongoose.Schema({
       type: String,
     },
     priority: {
-        type: Number,
+        type: String,
     },
     dateEntered: {
         type: Date,
-        nullable: true
     },
     dateCompleted: {
         type: Date,
+        nullable: true
     },
     assignedUser: {
         type: String,
@@ -31,7 +31,7 @@ var ToDoItemSchema = mongoose.Schema({
 var ToDoItem = module.exports = mongoose.model('ToDoItem', ToDoItemSchema);
 
 module.exports.createToDoItem = function(newToDoItem, callback){
-    newTodoItem.save(callback);
+    newToDoItem.save(callback);
 }
 
 module.exports.getAllToDoItems = function(req, res, callback){

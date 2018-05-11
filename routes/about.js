@@ -15,13 +15,13 @@ router.get('/', (req, res) => {
 
 // Create Item
 
-router.post('createToDoItem', ensureAuthenticated, function (req, res) {
+router.post('/createToDoItem', ensureAuthenticated, function (req, res) {
     let name = req.body.name;
     let category = req.body.category;
     let status = "New";
     let priority = req.body.priority;
     let dateEntered = new Date();
-
+    let assignedUser = req.user.name;
 
     // Validation
 
@@ -45,7 +45,8 @@ router.post('createToDoItem', ensureAuthenticated, function (req, res) {
             category: category,
             status: status,
             priority: priority,
-            dateEntered: dateEntered
+            dateEntered: dateEntered,
+            assignedUser: assignedUser
         });
 
         ToDoItem.createToDoItem(newToDoItem, function (err, toDoItem) {
