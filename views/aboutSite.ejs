@@ -1,0 +1,40 @@
+<% include partials/header%>
+<div class="container">
+    <!-- START PROMO BLOCK -->
+    <section class="hero is-bold is-small promo-block">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    About This Site
+                </h1>
+                <h2 class="subtitle">
+                    This site's main purpose is to showcase my skills as a full stack developer.
+                </h2>
+                <h2 class="subtitle">
+                    Since I work full-time using C# and ASP.NET MVC, I will challenge myself to build this website
+                    using a completely different set of tools. Eventually, this website will be built using the
+                    <fancy>m.e.r.n.</fancy> technology stack.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <!-- END PROMO BLOCK -->
+    <div class="columns">
+        <%for(let i=0; i<toDoItems.length; i++) { %>
+        <div class="column is-one-quarter is-success">
+            <p>
+                <%=toDoItems[i].name%>
+            </p>
+        </div>
+        <% } %>
+    </div>
+
+    <!--<p>-->
+        <!--<a class="button is-primary is-rounded is-large modal-button is-overlay" data-target="modal-addEditToDoItem">-->
+            <!--<span class="icon is-large">-->
+                <!--<i class="fas fa-plus"></i>-->
+            <!--</span>-->
+        <!--</a>-->
+    <!--</p>-->
+    <!--<% include partials/todo/addEditToDoItemModal.ejs %>-->
+</div>
