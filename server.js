@@ -41,6 +41,7 @@ db.on("error", function(err) {
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var blog = require('./routes/blog');
+var about = require('./routes/about');
 
 const app = express();
 
@@ -115,6 +116,7 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 app.use('/blog', blog);
+app.use('/about', about);
 
 // Setup Port
 var port = process.env.PORT || 3000;
