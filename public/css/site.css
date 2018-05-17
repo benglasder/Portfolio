@@ -204,4 +204,17 @@ body, html{
         background-attachment:scroll;
     }
 }
+.whole-post {
+    display: none;
+}
 
+.post {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+a.read {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
