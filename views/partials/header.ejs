@@ -35,20 +35,6 @@
                         <a href="/blog" class="navbar-item">Blog</a>
                         <a href="/aboutMe" class="navbar-item">About Me</a>
                         <a href="/about" class="navbar-item">About This Site</a>
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <span class="icon is-large">
-                            <i class="fas fa-sort-down"></i>
-                            </span>
-                            <div class="navbar-dropdown is-boxed">
-                                <%if (user) { %>
-                                    <a class="navbar-item" href="/blog/createPost">Create Post</a>
-                                    <hr class="navbar-divider">
-                                    <a class="navbar-item" href="/users/logout">Logout</a>
-                                <% } else { %>
-                                    <a href="/users/login" class="navbar-item">Admin Login</a>
-                                <% } %>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
