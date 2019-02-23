@@ -1,4 +1,4 @@
-const logger = require('logger');
+const logger = require('./logger');
 const rp = require('request-promise');
 const fs = require('fs');
 const i70WeatherUrls = {
@@ -10,18 +10,19 @@ const i70WeatherUrls = {
 };
 require('dotenv').config();
 
-getPageRawHtml = url =>{
-    rp(url)
-    .then(function(html){
-        //success!
-        console.log(html);
-    })
-        .catch(function(err){
-            //handle error
-            logger.log(err);
-            return null;
-        });
-};
+const weatherRepository = new (weatherRepository)({
+
+    getPageRawHtml = url =>{
+        rp(url)
+            .then(function(html){
+                //success!
+                console.log(html);
+            })
+            .catch(function(err){
+                //handle error
+                logger.log(err);
+                return null;
+            });
 
 
 // write files to disk
@@ -44,5 +45,6 @@ downloadPages = () => {
         }
     }
 };
+});
 
 module.exports = weatherRepository;
