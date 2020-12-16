@@ -2,7 +2,8 @@ console.log('May node be with you');
 
 const express = require('express'),
     morgan = require('morgan'),
-    logger = require('./server/logger');
+    logger = require('./server/logger'),
+    weatherRepository = require('./server/weatherRepository');
 const bodyParser = require('body-parser');
 
 var path = require('path');
@@ -24,9 +25,9 @@ require('dotenv').config();
 
 
 
+weatherRepository.downloadPages();
 
-
-mongoose.connect(process.env.MONGO_DB_CONNECTION);
+//mongoose.connect(process.env.MONGO_DB_CONNECTION);
 var db = mongoose.connection;
 
 db.on("open", function() {
